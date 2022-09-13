@@ -30,6 +30,5 @@ public class E04Oscars {
         } else {
             System.out.printf("Congratulations, %s got a nominee for leading role with %.1f!", nameActor, totalPoints);
         }
-
     }
 }

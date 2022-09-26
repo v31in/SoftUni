@@ -1,2 +1,2 @@
 # SoftUni
-SoftUni tasks and assignments.
+This is repository with solutions of problems in SoftUni courses.

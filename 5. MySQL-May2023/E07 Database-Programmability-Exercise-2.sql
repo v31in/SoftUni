@@ -15,6 +15,7 @@ DELIMITER ;
 call usp_get_employees_salary_above_35000();
 
 -- 2. Employees with Salary Above Number
+
 DELIMITER && 
 CREATE PROCEDURE usp_get_employees_salary_above (desired_salary DECIMAL(19,4))
 BEGIN
@@ -27,7 +28,6 @@ DELIMITER ;
 
 -- 3. Town Names Starting With
 
-Town Names Starting With
 DELIMITER && 
 CREATE PROCEDURE usp_get_towns_starting_with (town_substring VARCHAR(50))
 BEGIN
@@ -39,6 +39,7 @@ END &&
 DELIMITER ;
  
 -- 4. Employees from Town
+
 DELIMITER && 
 CREATE PROCEDURE usp_get_employees_from_town (searched_town VARCHAR(50))
 BEGIN
@@ -52,6 +53,7 @@ END &&
 DELIMITER ;
  
 -- 5. Salary Level Function
+
 DELIMITER && 
 CREATE FUNCTION ufn_get_salary_level(salary DECIMAL(19, 4))
 RETURNS VARCHAR(8)
@@ -67,6 +69,7 @@ END &&
 DELIMITER ;
  
 -- 6. Employees by Salary Level
+
 DELIMITER &&
 CREATE PROCEDURE usp_get_employees_by_salary_level(salary_level VARCHAR(8)) 
 BEGIN
@@ -78,6 +81,7 @@ END &&
 DELIMITER ;
  
 -- 7. Define Function
+
 DELIMITER &&
 CREATE FUNCTION ufn_is_word_comprised(set_of_letters VARCHAR(50), word VARCHAR(50))
 RETURNS INT
@@ -88,6 +92,7 @@ END &&
 DELIMITER ;
  
 -- 8. Find Full Name
+
 DELIMITER &&
 CREATE PROCEDURE usp_get_holders_full_name() 
 BEGIN
@@ -98,6 +103,7 @@ END &&
 DELIMITER ;
  
 -- 9. People with Balance Higher Than
+
 DELIMITER &&
 CREATE PROCEDURE usp_get_holders_with_balance_higher_than(money decimal(12,4))
 BEGIN
@@ -111,6 +117,7 @@ END &&
 DELIMITER ;
  
 -- 10. Future Value Function
+
 DELIMITER &&
 CREATE FUNCTION ufn_calculate_future_value(sum DECIMAL(19, 4), yearly_interest DOUBLE, yers INT)
 RETURNS DECIMAL(19, 4)
@@ -123,6 +130,7 @@ END &&
 DELIMITER ;
  
 -- 11. Calculating Interest
+
 DELIMITER &&
 CREATE PROCEDURE usp_calculate_future_value_for_account(id INT, interest_rate DECIMAL(19,4))
 BEGIN
@@ -135,6 +143,7 @@ END &&
 DELIMITER ;
  
 -- 12.   Deposit Money
+
 DELIMITER &&
 CREATE PROCEDURE usp_deposit_money(id INT, money_amount DECIMAL(19,4))
 BEGIN
@@ -149,6 +158,7 @@ END
 DELIMITER ;
  
 -- 13. Withdraw Money
+
 DELIMITER &&
 CREATE PROCEDURE usp_withdraw_money(id int, money_amount decimal(19,4))
 BEGIN
@@ -163,6 +173,7 @@ BEGIN
 END&&
  
 -- 14.   Money Transfer
+
 DELIMITER &&
 CREATE PROCEDURE usp_transfer_money(fromID int, toID int,money_amount decimal(19,4))
 BEGIN
@@ -182,6 +193,7 @@ BEGIN
 END&&
  
 -- 15. Log Accounts Trigger
+
 CREATE TABLE `logs`(
     `log_id` INT PRIMARY KEY AUTO_INCREMENT, 
     `account_id` INT NOT NULL,
@@ -198,6 +210,7 @@ BEGIN
 END$$
  
 -- 16. Emails Trigger 
+
 CREATE TABLE `notification_emails`(
     `id` INT PRIMARY KEY AUTO_INCREMENT, 
     `recipient` INT NOT NULL,
